@@ -32,7 +32,7 @@ const Todo = () => {
         }
         else {
             if(id){
-                await axios.post('http://localhost:2000/api/v2/addTask', {title: inputs.title, body: inputs.body,id: id}).then((response)=> console.log(response))
+                await axios.post('https://task-master1.vercel.app/api/v2/addTask', {title: inputs.title, body: inputs.body,id: id}).then((response)=> console.log(response))
                 setArray([...array, inputs]);
             setInputs({ title: "", body: "" });
             console.log(array);
@@ -63,7 +63,7 @@ const Todo = () => {
         // array.splice(id, "1  ");
         // setArray([...array])
         if(id){
-            await axios.delete(`http://localhost:2000/api/v2/deleteTask/${cardId}`, {data:{id:id}}).then((response)=>{
+            await axios.delete(`https://task-master1.vercel.app/api/v2/deleteTask/${cardId}`, {data:{id:id}}).then((response)=>{
             toast.success("Task Delete Successfully")
         })
         }
@@ -75,7 +75,7 @@ const Todo = () => {
     useEffect(() => {
         if(id){
         const fetch = async()=>{
-          await axios.get(`http://localhost:2000/api/v2/getTask/${id}`).then((response)=>{
+          await axios.get(`https://task-master1.vercel.app/api/v2/getTask/${id}`).then((response)=>{
               setArray(response.data.list)
           })
         }
