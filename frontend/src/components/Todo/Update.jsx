@@ -20,7 +20,7 @@ const Update = ({ display, update }) => {
 
   const submit = async () =>{
     // console.log(update._id)
-    await axios.put(`http://localhost:2000/api/v2/updateTask/${update._id}`,inputs).then((response) =>(
+    await axios.put(`https://task-master1.vercel.app/api/v2/updateTask/${update._id}`,inputs).then((response) =>(
       toast.success("Task Updated Successfully")
     ))
     display("none")
