@@ -17,7 +17,7 @@ const Signup = () => {
   }
   const submit = async (e) => {
     e.preventDefault();
-    await axios.post('http://localhost:2000/api/v1/register', inputs).then((response) => {
+    await axios.post('https://task-master1.vercel.app/api/v1/register', inputs).then((response) => {
       if(response.data.message === "User already exists!"){
         alert(response.data.message);    
       }
